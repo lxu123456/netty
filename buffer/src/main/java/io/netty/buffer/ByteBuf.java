@@ -44,7 +44,7 @@ import java.nio.charset.UnsupportedCharsetException;
  *
  * Just like an ordinary primitive byte array, {@link ByteBuf} uses
  * <a href="https://en.wikipedia.org/wiki/Zero-based_numbering">zero-based indexing</a>.
- * It means the index of the first byte is always {@code 0} and the index of the last byte is
+ * It means the index of the first byte is  {@code 0}always and the index of the last byte is
  * always {@link #capacity() capacity - 1}.  For example, to iterate all bytes of a buffer, you
  * can do the following, regardless of its internal implementation:
  *

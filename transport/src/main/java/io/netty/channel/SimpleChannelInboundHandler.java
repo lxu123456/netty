@@ -88,7 +88,7 @@ public abstract class SimpleChannelInboundHandler<I> extends ChannelInboundHandl
     public boolean acceptInboundMessage(Object msg) throws Exception {
         return matcher.match(msg);
     }
-
+    //lxu:channelRead0的入口
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         boolean release = true;

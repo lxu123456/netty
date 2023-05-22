@@ -461,6 +461,7 @@ public abstract class AbstractChannel extends DefaultAttributeMap implements Cha
             return remoteAddress0();
         }
 
+        //lxu:切换线程，从main线程切换到eventLoop线程
         @Override
         public final void register(EventLoop eventLoop, final ChannelPromise promise) {
             ObjectUtil.checkNotNull(eventLoop, "eventLoop");
@@ -475,7 +476,7 @@ public abstract class AbstractChannel extends DefaultAttributeMap implements Cha
             }
 
             AbstractChannel.this.eventLoop = eventLoop;
-
+            //lxu:判定当前线程是否为NIO线程，当前线程是main线程，肯定不是eventloop线程，所以到else里面去
             if (eventLoop.inEventLoop()) {
                 register0(promise);
             } else {

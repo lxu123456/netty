@@ -77,6 +77,10 @@ import io.netty.util.AsciiString;
  */
 public class HttpRequestDecoder extends HttpObjectDecoder {
 
+    public static void main(String[] args) {
+        System.out.println('O' << 8 );
+    }
+
     private static final AsciiString Host = AsciiString.cached("Host");
     private static final AsciiString Connection = AsciiString.cached("Connection");
     private static final AsciiString ContentType = AsciiString.cached("Content-Type");
